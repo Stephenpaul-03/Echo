@@ -27,6 +27,7 @@
     },
     "plugins": [
       "expo-router",
+      "./plugins/with-android-release-optimization",
       "./plugins/with-immersive-mode",
       [
         "expo-splash-screen",
