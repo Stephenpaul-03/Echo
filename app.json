@@ -1,0 +1,62 @@
+{
+  "expo": {
+    "name": "Echo",
+    "slug": "echo-now-playing",
+    "version": "1.0.0",
+    "orientation": "default",
+    "icon": "./assets/images/echo-icon.png",
+    "scheme": "echo",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#080b09",
+        "foregroundImage": "./assets/images/echo-foreground.png",
+        "monochromeImage": "./assets/images/echo-monochrome.png"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "package": "com.stephenpaul.echo"
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/echo-icon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "./plugins/with-immersive-mode",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/echo-foreground.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff",
+          "dark": {
+            "image": "./assets/images/echo-monochrome.png",
+            "backgroundColor": "#080b09"
+          }
+        }
+      ],
+      [
+        "expo-dev-client",
+        {
+          "launchMode": "most-recent"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "androidStatusBar": {
+      "hidden": true
+    },
+    "androidNavigationBar": {
+      "visible": "sticky-immersive"
+    }
+  }
+}
