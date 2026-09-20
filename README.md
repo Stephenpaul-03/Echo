@@ -19,6 +19,8 @@ Echo turns whatever is playing into a focused visual dashboard. It shows the mus
 ## Requirements
 
 - Android device or emulator
+- Current minimum Android version: Android 7.0 (API 24)
+- Android 5.0/5.1 support (API 21/22) is actively being investigated and is not supported yet
 - Node.js 22+
 - Java 17
 - Android SDK 36
