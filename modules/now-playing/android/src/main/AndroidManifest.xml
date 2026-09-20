@@ -1,0 +1,40 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+  <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+  <queries>
+    <package android:name="com.maxmpz.audioplayer" />
+    <intent>
+      <action android:name="com.maxmpz.audioplayer.API_COMMAND" />
+    </intent>
+    <!-- Resolve the active media app's label and its exported artwork providers. -->
+    <intent>
+      <action android:name="android.media.browse.MediaBrowserService" />
+    </intent>
+    <intent>
+      <action android:name="android.intent.action.VIEW" />
+      <data android:mimeType="audio/*" />
+    </intent>
+    <intent>
+      <action android:name="android.intent.action.MEDIA_BUTTON" />
+    </intent>
+  </queries>
+  <application>
+    <provider
+      android:name="androidx.core.content.FileProvider"
+      android:authorities="${applicationId}.nowplaying.artwork"
+      android:exported="false"
+      android:grantUriPermissions="true">
+      <meta-data
+        android:name="android.support.FILE_PROVIDER_PATHS"
+        android:resource="@xml/now_playing_file_paths" />
+    </provider>
+    <service
+      android:name=".NowPlayingListener"
+      android:label="Echo · Now Playing"
+      android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
+      android:exported="true">
+      <intent-filter>
+        <action android:name="android.service.notification.NotificationListenerService" />
+      </intent-filter>
+    </service>
+  </application>
+</manifest>
